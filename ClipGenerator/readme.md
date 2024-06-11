@@ -1,0 +1,2 @@
+### Clip generator WIP
+This is a python project that uses ai models to monitor a specific twitch streamer, it takes the chat data and it will use a ai anaylyzer to search for keywords that will determine when and if a funny moment is happening on the stream. It will also integrate a cam analyser to understand and determine the streamer reaction to determine if something interesting, sad or funny is happening. It will then take that information and automatially create a clip of that moment and save it locally on the pc.
