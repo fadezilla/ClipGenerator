@@ -27,7 +27,7 @@ def exchange_code_for_token(client_id, client_secret, code, redirect_uri):
     response.raise_for_status()  # This will raise an exception for HTTP request errors
     data = response.json()
     access_token = data['access_token']
-    refresh_token = data.get('refresh_token', '')  # Sometimes refresh_token might be absent
+    refresh_token = data.get('refresh_token', '')  
     return access_token, refresh_token
 
 def refresh_access_token(refresh_token, client_id, client_secret):

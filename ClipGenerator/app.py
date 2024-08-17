@@ -2,7 +2,7 @@ from flask import Flask, request, redirect, url_for
 from auth import exchange_code_for_token, save_tokens
 import os
 import threading
-import main  # Ensure main.py contains the main function that needs to be run
+import main
 
 app = Flask(__name__)
 

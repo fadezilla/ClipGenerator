@@ -27,9 +27,9 @@ def on_close(ws, close_status_code, close_msg):
     try:
         client_id = os.getenv('CLIENT_ID')
         client_secret = os.getenv('CLIENT_SECRET')
-        _, refresh_token = load_tokens()  # Make sure your load_tokens function returns both access and refresh tokens
+        _, refresh_token = load_tokens() 
         access_token, new_refresh_token = refresh_access_token(refresh_token, client_id, client_secret)
-        save_tokens(access_token, new_refresh_token)  # Make sure to save the possibly updated tokens
+        save_tokens(access_token, new_refresh_token) 
         attempt_reconnect(access_token)
     except Exception as e:
         print(f"Failed to load or refresh tokens: {e}")
@@ -38,7 +38,7 @@ def on_open(ws, access_token):
     def run(*args):
         ws.send("CAP REQ :twitch.tv/tags twitch.tv/commands twitch.tv/membership")
         ws.send(f"PASS oauth:{access_token}")
-        ws.send("NICK your_twitch_username")  # Replace with your actual username
+        ws.send("NICK fadezilla")
         ws.send("JOIN #naowh")
         while True:
             time.sleep(1)

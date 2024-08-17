@@ -8,7 +8,7 @@ def run_main(access_token=None):
         access_token, refresh_token = refresh_access_token(refresh_token, os.getenv('CLIENT_ID'), os.getenv('CLIENT_SECRET'))
         save_tokens(access_token, refresh_token)
 
-    # Example functionality: Start monitoring Twitch chat
+    # starting monitoring the given steramer's chat
     start_chat_monitor('naowh', access_token)
 
 if __name__ == "__main__":
